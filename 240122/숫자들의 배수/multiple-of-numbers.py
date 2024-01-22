@@ -6,11 +6,11 @@ arr = []
 
 while True:
     arr.append(n * i)
-    i += 1
     if (n * i) % 5 == 0:
         count += 1
         if count == 2:
             break
+    i += 1
 
 for elem in arr:
     print(elem, end=' ')
