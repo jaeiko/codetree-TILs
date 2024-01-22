@@ -10,7 +10,6 @@ while True:
     if (n * i) % 5 == 0:
         count += 1
         if count == 2:
-            arr.append(n * i)
             break
 
 for elem in arr:
