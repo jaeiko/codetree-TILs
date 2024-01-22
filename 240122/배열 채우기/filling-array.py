@@ -4,5 +4,5 @@ reversed_arr = arr[::-1]
 
 for elem in reversed_arr:
     if(elem == 0):
-        continue
+        break
     print(elem, end=' ')
