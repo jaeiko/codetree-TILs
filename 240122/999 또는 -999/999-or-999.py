@@ -10,8 +10,8 @@ elif 999 in arr:
 elif -999 in arr:
     new_arr = arr[0:arr.index(-999)]
 
-max_val = 0
-min_val = 0
+max_val = new_arr[0]
+min_val = new_arr[0]
 for elem in new_arr:
     if max_val < elem:
         max_val = elem
