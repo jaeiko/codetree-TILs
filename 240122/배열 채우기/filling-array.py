@@ -1,9 +1,11 @@
 arr = list(map(int, input().split()))
 
-if(arr.index(0)):
-    reversed_arr = arr[arr.index(0)-1::-1]
-else:
-    reversed_arr = arr[::-1]
+new_arr = []
 
-for elem in reversed_arr:
+for elem in arr:
+    if(elem == 0):
+        break
+    new_arr.append(elem)
+
+for elem in new_arr[::-1]:
     print(elem, end=' ')
