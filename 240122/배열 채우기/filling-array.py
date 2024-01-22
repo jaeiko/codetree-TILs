@@ -1,12 +1,15 @@
 arr = list(map(int, input().split()))
 
-reversed_arr = arr[::-1]
+reversed_arr = []
 
-
-for i in range(len(reversed_arr)):
-    if(i == 0 and reversed_arr[i] == 0):
+i = 0
+for elem in arr[::-1]:
+    if(i == 0 and elem == 0):
         continue
-    else:
-        if(reversed_arr[i] == 0):
-            break
-        print(reversed_arr[i], end=' ')
+    elif(elem == 0):
+        break
+    reversed_arr.append(elem)
+    i += 1
+
+for elem in reversed_arr:
+    print(elem, end=' ')
