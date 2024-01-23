@@ -1,6 +1,6 @@
 N = int(input())
 
-arr = sorted(list(map(int, input().split())))
+arr = sorted(list(map(int, input().split())), reverse=True)
 
 max_num = -1
 for i in range(N):
