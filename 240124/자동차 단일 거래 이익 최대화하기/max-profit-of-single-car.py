@@ -12,4 +12,7 @@ else:
                 break
             if price_arr[j] - price_arr[i] > difference:
                 difference = price_arr[j] - price_arr[i]
-    print(difference)
+    if difference < 0:
+        print(0)
+    else:
+        print(difference)
