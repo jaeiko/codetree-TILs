@@ -21,4 +21,4 @@ for i in range(4):
     print(column_sum_val / 2, end=' ')
 
 print()
-print(total_sum / 8)
+print(f'{total_sum / 8}.1f')
