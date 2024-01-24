@@ -26,7 +26,7 @@ for i in range(n):
         if pre_year > int(year):    # 현 반복문의 year이 이전에 저장된 pre_year보다 작으면 데이터 새로 갱신
             pre_year, pre_month, pre_day, pre_week, pre_weather = set_data(year, month, day, week, weather)
         elif pre_year == int(year):
-            if pre_month > month:   # 현 반복문의 year이 이전에 저장된 pre_year과 같고, month가 pre_month보다 작으면 데이터 새로 갱신
+            if pre_month > int(month):   # 현 반복문의 year이 이전에 저장된 pre_year과 같고, month가 pre_month보다 작으면 데이터 새로 갱신
                 pre_year, pre_month, pre_day, pre_week, pre_weather = set_data(year, month, day, week, weather)
             elif pre_month == int(month) and pre_day >= int(day):   # 현 반복문의 year, month가 이전에 저장된 pre_year, pre_month과 같고, day가 pre_day보다 작으면 데이터 새로 갱신
                 pre_year, pre_month, pre_day, pre_week, pre_weather = set_data(year, month, day, week, weather)
