@@ -18,7 +18,7 @@ j = (len(arr) // 2)
 while True:
     if i == -1 or j == len(arr) - 1: #만약 인덱스 i 가 0 아래에 있거나 인덱스 j가 리스트의 끝을 넘는다면 반복문 종료 후 pre_sum_val 출력
         break
-    if i == len(arr) // 2:  # 맨 처음 pre_sum_val 설정하기 위해 정렬된 리스트의 가장 중앙 2개값을 더한 값으로 초기값 설정
+    if i == len(arr) // 2 - 1:  # 맨 처음 pre_sum_val 설정하기 위해 정렬된 리스트의 가장 중앙 2개값을 더한 값으로 초기값 설정
         pre_sum_val = arr[i] + arr[j]
     else:   # 점차 arr[i]과 arr[j]가 양쪽으로 가면서 더하여 sum_val에 저장. pre_sum_val보다 크다면 갱신.
         sum_val = arr[i] + arr[j]
