@@ -21,4 +21,4 @@ for i in range(n):
 sorted_data_list = sorted(data_list, key=lambda x : (int(x.date[0:4]), int(x.date[5:7]), int(x.date[8:10])))
 
 # 출력
-print(f'{data_list[0].date[0:4]}-{data_list[0].date[5:7]}-{data_list[0].date[8:10]} {data_list[0].week} {data_list[0].weather}')
+print(f'{sorted_data_list[0].date[0:4]}-{sorted_data_list[0].date[5:7]}-{sorted_data_list[0].date[8:10]} {sorted_data_list[0].week} {sorted_data_list[0].weather}')
