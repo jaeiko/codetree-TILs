@@ -16,7 +16,7 @@ i = 0
 for elem in nums:
     index_list.append(sorted_nums.index(elem) + 1)  # 정렬된 리스트 sorted_nums의 해당 요소의 위치(index+1)를 index_list에 추가
     if index_list.count(elem) >= 2: # 만약 그 요소의 위치가 이미 index_list에 들어있다면
-        index_list[i] += index_list.count(elem) - 1 # 먼저 입력으로 주어진 원소가 더 앞으로 와야 하니 나중에 입력된 원소는 먼저 들어온 원소의 인덱스의 개수만큼 더해서 증가시킴.
+        index_list[i] += nums[0:i].count(elem) - 1 # 먼저 입력으로 주어진 원소가 더 앞으로 와야 하니 나중에 입력된 원소는 먼저 들어온 원소의 인덱스의 개수만큼 더해서 증가시킴.
     i += 1
 
 
