@@ -24,7 +24,7 @@ while True:
     # 해당 달의 day를 넘겼으면 month에 1증가, day를 0으로 초기화
     if day > num_of_days[month]:
         month += 1
-        day = 0
+        day = 1
 
 # break 후 총 걸린 일수 출력
 print(elapsed_days)
