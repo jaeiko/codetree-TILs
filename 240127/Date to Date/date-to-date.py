@@ -7,7 +7,7 @@ m1, d1, m2, d2 = tuple(map(int, input().split()))
 
 # 월, 일 변수
 month, day = m1, d1
-elapsed_days = 0    # 총 일수 저장하는 변수
+elapsed_days = 1    # 총 일수 저장하는 변수
 
                 # 월별 마지막날 저장한 리스트
                   #1. 2.  3.  4.  5.  6.  7.  8.  9.  10. 11. 12.
