@@ -18,7 +18,7 @@ if a == b:  # a와 b가 같으면 진수가 같으니 그대로 n 출력하고 �
 decimal = 0
 i = len(n)
 for elem in n:
-    decimal += elem * (8 ** (i-1))
+    decimal += elem * (a ** (i-1))
     i -= 1
 
 # 다시 변환한 b진수로 저장하기 위해 n 을 빈 리스트로 초기화
@@ -32,5 +32,5 @@ while True:
     n.append(decimal % b)
     decimal //= b
 
-for elem in n:
+for elem in n[::-1]:
     print(elem, end='')
