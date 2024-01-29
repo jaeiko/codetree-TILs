@@ -18,14 +18,14 @@ for _ in range(n):
     if command == 'L':
         # 왼쪽으로 이동할 경우 : 현재 위치 - 이동한 거리
         section_left = cur - x
-        section_right = cur
-        cur -= x
+        section_right = cur 
+        cur -= x    # 현재 위치는 왼쪽으로 x 간 크기만큼 이동(왼쪽은 cur - x 부터 cur까지 타일 포함)
         color = 'W' # 왼쪽으로 이동하면서 왼쪽으로 뒤집음 => 흰색으로 바뀜
     else:
         # 오른쪽으로 이동할 경우 : 현재 위치 - 이동한 거리
         section_left = cur
         section_right = cur + x
-        cur += x
+        cur += x - 1    # 현재 위치는 오른쪽으로 x -1 간 크기만큼 이동(오른쪽은 cur 부터 cur + (x-1)까지 타일 포함)
         color = 'B' # 오른쪽으로 이동하면서 오른쪽으로 뒤집음 => 검정색으로 바뀜
 
     coordinates.append([section_left, section_right, color])   # 왼쪽 위치와 오른쪽 위치(즉, 이동한 거리) 그리고 색깔을 좌표 리스트에 저장
