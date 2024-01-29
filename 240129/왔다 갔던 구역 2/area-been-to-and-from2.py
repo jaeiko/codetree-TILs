@@ -1,28 +1,50 @@
 '''
 위치 0에서 시작하여 n번의 명령에 걸쳐 움직인 뒤, 2번 이상 지나간 영역의 크기를 출력하는 프로그램
-
-이 문제의 포인트 : 결국 왼쪽으로 간 애들을을 이어서 만들고, 오른쪽으로 간 애들을 이어서 둘 다 0 부터 시작할 때 겹치는 구간이랑 같게 된다.
 '''
 
 # 명령 횟수 n 입력
 n = int(input())
 
-# 길이 1000까지의 구간(n * x의 최댓값은 1000이므로)
-sections = [0] * 1000
+# 좌표 리스트
+coordinates = []
 
-left_index = 0  # 왼쪽 인덱스
-right_index = 0 # 오른쪽 인덱스
+# OFFSET 설정 (-1000~1000 => 0~2000)
+OFFSET = 1000
+
+# 현재 위치
+cur = 0
 
 for _ in range(n):
-    x, command = tuple(map(str, input().split()))   # 명령 입력
+    x, command = tuple(map(str, input().split()))   # x : 이동한 거리 / command : 방향
+    x = int(x)
 
-    if command == 'L':      # 왼쪽 이동이면 이전에 왼쪽으로 갔던 곳부터 시작해서 구간을 지나간다.
-        left_index += int(x)    # left_index에 x+1만큼 증가
-    elif command == 'R':    # 오른쪽 이동이면 이전에 오른쪽으로 갔던 곳부터 시작해서 구간을 지나간다.
-        right_index += int(x)   # right_index에 x+1만큼 증가
+    if command == 'L':
+        # 왼쪽으로 이동할 경우 : 현재 위치 - 이동한 거리
+        section_left = cur - x
+        section_right = cur
+        cur -= x
+    else:
+        # 오른쪽으로 이동할 경우 : 현재위치 + 이동한 거리
+        section_left = cur
+        section_right = cur + x
+        cur += x
+    
+    coordinates.append([section_left, section_right])   # 왼쪽 위치와 오른쪽 위치(이동한 거리)를 좌표 리스트에 저장
 
-# 2번 이상 지나간 구간 구하기
-checked = max(left_index, right_index) - abs(left_index - right_index)
+checked = [0] * 2001    # 2001개의 구간을 가진 수직선 (명령은 총 100번, 한번에 이동하는 거리는 최대 10까지이므로)
+
+for x1, x2 in coordinates:
+    x1, x2 = x1 + OFFSET, x2 + OFFSET
+    
+    # 구간 칠하기(구간 단위이므로 x2에 등호 들어가지 않음에 주의)
+    for i in range(x1, x2):
+        checked[i] += 1
+
+# 2번 이상 지나간 영역의 크기 구하기
+count = 0
+for elem in checked:
+    if elem >= 2:
+        count += 1
 
 # 출력
-print(checked)
+print(count)
