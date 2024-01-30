@@ -17,14 +17,14 @@ for _ in range(n):
 
     if command == 'L':
         # 왼쪽으로 이동할 경우 : 현재 위치 - 이동한 거리
-        section_left = cur - x + 1
-        section_right = cur
-        cur -= x    # 현재 위치는 왼쪽으로 x 간 크기만큼 이동(왼쪽은 cur - (x + 1) 부터 cur까지 타일 포함)
+        section_left = (cur - x) + 1
+        section_right = cur + 1
+        cur = (cur - x) + 1    # 현재 위치는 왼쪽으로 x 간 크기만큼 이동(왼쪽은 (cur - x) + 1 부터 cur까지 타일 포함)
         color = 'W' # 왼쪽으로 이동하면서 왼쪽으로 뒤집음 => 흰색으로 바뀜
     else:
         # 오른쪽으로 이동할 경우 : 현재 위치 - 이동한 거리
         section_left = cur
-        section_right = cur + x - 1
+        section_right = cur + x
         cur += x - 1    # 현재 위치는 오른쪽으로 x -1 간 크기만큼 이동(오른쪽은 cur 부터 cur + (x-1)까지 타일 포함)
         color = 'B' # 오른쪽으로 이동하면서 오른쪽으로 뒤집음 => 검정색으로 바뀜
 
@@ -35,8 +35,11 @@ checked = [''] * 200001 # 200001개의 회색 타일
 for x1, x2, color in coordinates:
     x1, x2 = x1 + OFFSET, x2 + OFFSET
 
+    if x1 == x2:
+        checked[x1] = color
+
     # 구간 칠하기(구간 단위이므로 x2에 등호 들어가지 않음을 주의)
-    for i in range(x1, x2 + 1):
+    for i in range(x1, x2):
         checked[i] = color
 
 white_cnt = 0   # 흰색 타일 갯수
