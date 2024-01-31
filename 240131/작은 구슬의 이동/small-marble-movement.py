@@ -6,7 +6,7 @@ dx, dy 테크닉을 활용한 문제 3
 
 # x, y가 배열 안에 있는지 확인하는 함수
 def in_range(x, y):
-    return 1 <= x <= n and 1 <= y <= n
+    return 0 <= x <= n and 0 <= y <= n
 
     # 행렬에서의 L, D, R, U
 dx = [0, 1, -1, 0]
