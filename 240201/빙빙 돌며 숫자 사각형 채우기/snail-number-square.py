@@ -18,8 +18,8 @@ n, m = tuple(map(int, input().split()))
 
 # n * m 크기의 배열 생성(요소는 전부 0)
 arr = [
-    [0] * n
-    for _ in range(m)
+    [0] * m
+    for _ in range(n)
 ]
 
 # x, y의 시작점과 시작점의 요소, 방향 초기화
