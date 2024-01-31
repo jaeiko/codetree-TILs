@@ -6,17 +6,17 @@ dx, dy 테크닉을 활용한 문제 3
 
 # x, y가 배열 안에 있는지 확인하는 함수
 def in_range(x, y):
-    return 0 <= x <= n and 0 <= y <= n
+    return 1 <= x <= n and 1 <= y <= n
 
     # 행렬에서의 L, D, R, U
 dx = [0, 1, -1, 0]
 dy = [1, 0, 0, -1]
 
 mapper = {
-    'L' : 0,
+    'R' : 0,
     'D' : 1,
-    'R' : 2,
-    'U' : 3
+    'U' : 2,
+    'L' : 3
 }
 
 # n : 격자의 크기
