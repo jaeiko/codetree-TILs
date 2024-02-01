@@ -25,7 +25,7 @@ arr = [
     for _ in range(n)
 ]
 
-    # R  D  L   U
+# 행렬: N  E  S  W
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
