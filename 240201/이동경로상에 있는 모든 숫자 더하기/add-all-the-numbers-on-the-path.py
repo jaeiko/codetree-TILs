@@ -34,7 +34,7 @@ x, y = n//2 , n//2
 dir_num = 0 # 방향 전환용 변수
 
 # sum_val 값에 arr[n//2][n//2] 저장
-sum_val = arr[x][y]
+sum_val = int(arr[x][y])
 
 for elem in commands:
     if elem == 'R':     # 명령 R은 오른쪽으로 90도 방향 전환
@@ -43,7 +43,6 @@ for elem in commands:
         dir_num = (dir_num + 3) % 4
     elif elem == 'F':   # 명령 F가 주어지면 바라보고 있는 방향으로 한칸 이동
         nx, ny = x + dx[dir_num], y + dy[dir_num]
-        print(nx, ny)
         if not in_range(nx, ny):  # 격자의 범위를 벗어나게 하는 명령어는 무시해야함
             continue
         x, y = nx, ny
