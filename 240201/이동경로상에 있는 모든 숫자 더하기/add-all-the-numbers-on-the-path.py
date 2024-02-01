@@ -45,8 +45,9 @@ for elem in commands:
         nx, ny = x + dx[dir_num], y + dy[dir_num]
         if not in_range(nx, ny):  # 격자의 범위를 벗어나게 하는 명령어는 무시해야함
             continue
-        x, y = nx, ny
-        sum_val += int(arr[x][y])
+        else:
+            x, y = nx, ny
+            sum_val += int(arr[x][y])
 
 # 출력
 print(sum_val)
