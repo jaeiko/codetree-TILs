@@ -21,7 +21,7 @@ commands = input()
 
 # n * n 행렬의 요소 입력
 arr = [
-    input().split()
+    list(map(int, input().split()))
     for _ in range(n)
 ]
 
@@ -34,7 +34,7 @@ x, y = n//2 , n//2
 dir_num = 0 # 방향 전환용 변수
 
 # sum_val 값에 arr[n//2][n//2] 저장
-sum_val = int(arr[x][y])
+sum_val = arr[x][y]
 
 for elem in commands:
     if elem == 'R':     # 명령 R은 오른쪽으로 90도 방향 전환
@@ -45,9 +45,9 @@ for elem in commands:
         nx, ny = x + dx[dir_num], y + dy[dir_num]
         if not in_range(nx, ny):  # 격자의 범위를 벗어나게 하는 명령어는 무시해야함
             continue
-        else:
+        else:   # 범위 이내이면 그대로 keep going
             x, y = nx, ny
-            sum_val += int(arr[x][y])
+            sum_val += arr[x][y]
 
 # 출력
 print(sum_val)
