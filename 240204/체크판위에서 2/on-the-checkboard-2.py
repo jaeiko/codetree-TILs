@@ -13,10 +13,10 @@
 # r: 직사각형의 세로변 / c : 직사각형의 가로변
 r, c = tuple(map(int, input().split()))
 
-# R * C크기의 직사각형이 W B 로 입력받아 채워짐.
+# R * C 크기의 직사각형이 W B 로 입력받아 채워짐.
 grid = [
     list(map(str, input().split()))
-    for _ in range(c)
+    for _ in range(r)
 ]
 
 cnt = 0
