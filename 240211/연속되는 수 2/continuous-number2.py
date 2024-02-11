@@ -17,7 +17,9 @@ for i in range(n):
         cnt += 1
         if max_cnt < cnt:   # 만약 cnt가 max_cnt를 넘어섰다면 최댓값 갱신
             max_cnt = cnt
+    else:   # 이전 숫자와 들어온 숫자가 다르면 cnt는 1 다시 초기화
+        cnt = 1
     pre_num = input_num # 들어온 숫자는 이전 숫자에 저장
 
 # 출력
-print(cnt)
+print(max_cnt)
