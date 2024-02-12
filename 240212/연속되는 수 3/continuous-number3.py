@@ -16,7 +16,7 @@ def check_signed(num):
 n = int(input())
 
 cur_cnt = 1     # 현재 카운트하는 변수
-max_cnt = 0     # 카운트 횟수가 최대인 값을 저장하는 변수
+max_cnt = 1     # 카운트 횟수가 최대인 값을 저장하는 변수
 signed = 0      # 부호 확인용 변수(0 : 음수 / 1 : 양수)
 for i in range(n):
     input_num = int(input())    # 숫자 입력
