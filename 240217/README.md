@@ -12,7 +12,7 @@
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
-|[Novice Mid / 케이스별로 나누기 / 겹치는 경우](https://www.codetree.ai/missions?missionId=5)|[[개념]두 직사각형](https://www.codetree.ai/missions/5/problems/two-rectangles)|![보통][medium]|![Failed][failed]|[링크](https://github.com/jaeiko/codetree-TILs/blob/main/240217/%EB%91%90%20%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/two-rectangles.py)|
+|[Novice Mid / 케이스별로 나누기 / 겹치는 경우](https://www.codetree.ai/missions?missionId=5)|[[개념]두 직사각형](https://www.codetree.ai/missions/5/problems/two-rectangles)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jaeiko/codetree-TILs/blob/main/240217/%EB%91%90%20%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/two-rectangles.py)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
