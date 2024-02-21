@@ -27,7 +27,7 @@ void PrintDescendingingNum(int n) {
 
 int main() {
     int n;
-    scanf("%d", &n);    # n 입력
+    scanf("%d", &n);    // n 입력
 
     // 함수 호출을 통한 결과값 출력
     PrintAscendingNum(n);
