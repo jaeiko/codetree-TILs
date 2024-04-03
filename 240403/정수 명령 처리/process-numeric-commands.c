@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define _CRT_SECURE_NO_WARNINGS
-#define MAX_STACK 100
+#define MAX_STACK 1000000
 
 typedef enum { false, true } bool;
 typedef int Data;
