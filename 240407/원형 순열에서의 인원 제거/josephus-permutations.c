@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_QUEUE 100
+#define MAX_QUEUE 5000
 
 typedef enum { false, true } bool;
 typedef int Data;
