@@ -4,8 +4,8 @@
 #include <stdio.h>
 
 int recursion(int n, int prev, int cur) {
-    if (n == 1) return 1;   // n이 1일 때 최종값 2 반환(첫 번째 값에 해당)
-    if (n == 2) return 2;   // n이 2일 때 최종 연산값 4 반환(두 번째 값에 해당)
+    if (n == 1) return 2;   // n이 1일 때 최종값 2 반환(첫 번째 값에 해당)
+    if (n == 2) return 4;   // n이 2일 때 최종 연산값 4 반환(두 번째 값에 해당)
     if (n == 3) return (prev * cur) % 100; // n은 3일 때 최종 연산 값인 cur값 반환
 
     return recursion(n - 1, cur, (prev * cur) % 100); // 이전값에 현재값으로 갱신하고, 현재값을 중간 계산 값으로 갱신하여 인덱스 - 1값과 함께 인자로 전달
