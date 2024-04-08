@@ -6,7 +6,7 @@
 
 // Max값 찾는 함수(By Function Call for Tail Recursion)
 int rfindMaxTail(int* arr, int n, int max) {
-    if (n == 1) // n이 1이면 배열 순회를 다한 것이므로 최종 max값 반환
+    if (n == 0) // n이 1이면 배열 순회를 다한 것이므로 최종 max값 반환
         return max;
 
     if (max <= arr[n - 1]) {    // 현재 max값보다 arr[n-1] 값이 크면 max값 갱신
