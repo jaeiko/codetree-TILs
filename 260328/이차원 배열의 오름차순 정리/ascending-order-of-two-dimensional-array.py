@@ -1,20 +1,25 @@
+import sys
+
+# 입력 속도 최적화
+input = sys.stdin.readline
 n = int(input())
 k = int(input())
 
-# Please write your code here.
 lo = 1
-hi = n*n
-ans = n*n
+# 최적화 1: K번째 수는 K를 넘을 수 없으므로 탐색 상한선을 k로 설정
+hi = k 
+ans = k
 
 while lo <= hi:
     mid = (lo + hi) // 2
-
+    
     val = 0
-    for i in range(1, n + 1):   # key point
+    # 최적화 2: i가 mid보다 크면 몫이 0이므로, min(n, mid)까지만 순회
+    for i in range(1, min(n, mid) + 1):
         val += min(n, mid // i)
     
-    if val >= k: # 현재 구한 val이 우리가 찾고자 하는 k보다 크거나 같은경우
-        hi = mid - 1    # 답을 일단 정하고, 이 답보다 그 이전을 만족하는 값도 존재할 수 있으니 hi 조정
+    if val >= k:
+        hi = mid - 1
         ans = min(ans, mid)
     else:
         lo = mid + 1
