@@ -13,7 +13,7 @@ stone = [(r, c) for r, row in enumerate(grid) for c, val in enumerate(row) if va
 # key point: 꼭 combinations 쓰는 법 알아두기!!(매우 편함)
 stone_combi = list(combinations(stone, m))
 # start_info: 시작점 정보 추가(e.g. [(1,2), (3,4)]...)
-start_info = list(tuple(map(int, input().split())) for _ in range(2))
+start_info = list(tuple(map(int, input().split())) for _ in range(k))
 
 # max_num: 돌을 제거했을 때 가능한 최댓값 저장하는 변수
 max_num = -sys.maxsize
