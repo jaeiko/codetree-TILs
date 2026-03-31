@@ -21,7 +21,10 @@ max_num = -sys.maxsize
 # 방문 여부 리스트
 visited = [[0] * n for _ in range(n)]
 
-# tot_count: 총 방문 가능한 횟수
+#bfs_count: start_x, start_y에서 시작할 때 방문 가능한 횟수
+bfs_count = 0
+
+# tot_count: 모든 start_x, start_y에서 시작을 포함해서 총 방문 가능한 횟수
 tot_count = 0
 
 q = deque()
@@ -37,7 +40,6 @@ def in_range(x, y):
 
 # 해당 위치에서 갈수 있는지 체크하는 함수
 def can_go(x, y):
-    global m
     if not in_range(x, y):  # 범위 밖이면 False
         return False
     
@@ -47,11 +49,15 @@ def can_go(x, y):
     return True
 
 def push(x, y):
+    global bfs_count
+    # 이전에 방문한 적 없던 곳이면 bfs_count += 1
+    if visited[x][y] == False:
+        bfs_count += 1
     visited[x][y] = True
     q.append((x, y))
 
+
 def bfs():
-    bfs_count = 1
     while q:
         x, y = q.popleft()
         
@@ -59,9 +65,10 @@ def bfs():
             nx, ny = x + dx, y + dy
             if can_go(nx, ny):  # 옆 동네 갈 수 있으면 큐에 추가
                 push(nx, ny)
-                bfs_count += 1  # 방문 가능하니 카운트도 추가
     
     return bfs_count
+
+
 
 if len(stone) == 0: # 돌의 개수가 하나도 없다면 그냥 bfs 수행
     for start_x, start_y in start_info:
@@ -72,23 +79,28 @@ if len(stone) == 0: # 돌의 개수가 하나도 없다면 그냥 bfs 수행
     print(tot_count)
 else:   # 돌의 개수가 있으면 m개만큼 지우고 bfs 수행해서 도달 가능한 칸의 최댓값을 저장하기
     for i in range(len(stone_combi)):
-        for stone_x, stone_y in stone_combi[i]: # stone_combi[i] 일 때의 돌들을 일단 제거
+        # 1. stone_combi[i] 일 때의 돌들을 일단 제거
+        for stone_x, stone_y in stone_combi[i]:
             grid[stone_x][stone_y] = 0
             
-        # 돌 제거한 후 bfs 수행해서 방문 가능한 수 체크
+        # 2. bfs 수행해서 방문 가능한 수 체크
         for start_x, start_y in start_info:
             push(start_x-1, start_y-1)
             tot_count += bfs()
+            bfs_count = 0
             
-            # 최댓값을 max_num에 저장
-            max_num = max(max_num, tot_count)
-            # 다시 tot_count, visited를 0으로 초기화(다음 start_info에 대한 bfs 준비를 위해)
-            tot_count = 0
-            visited = [[0] * n for _ in range(n)]
+        # 3. 최댓값을 정답 변수인 max_num에 저장
+        max_num = max(max_num, tot_count)
+        
+        # 다음 경우의 수를 위해 tot_count를 0으로 초기화
+        tot_count = 0
 
-        # 다음 경우의 수를 위해 돌 원상복귀
+        # 3. 다음 경우의 수를 위해 돌 원상복귀
         for stone_x, stone_y in stone_combi[i]:
             grid[stone_x][stone_y] = 1
+
+        # 4. 다음 경우의 수를 위해 다시 visited 0으로 초기화
+        visited = [[0] * n for _ in range(n)]
     
     # 정답 출력: 다 제거 조합을 고려해봤을 때 방문 가능한 최댓값 출력
     print(max_num)
