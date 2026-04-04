@@ -43,4 +43,7 @@ for i in range(1, n+1):
 
 # 시작점 이후부터 각 지점까지의 최단거리 값을 출력한다.
 for i in range(2, n+1):
-    print(dist[i])
+    if dist[i] == INT_MAX:
+        print(-1)
+    else:
+        print(dist[i])
