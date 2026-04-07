@@ -59,6 +59,9 @@ curr = a
 path_result = [curr]
 while curr != b:
     next_node = INT_MAX # 가장 작은 번호를 찾기 위해 무한대로 초기화
+    
+    # 인접 노드를 번호순(오름차순)으로 정렬하여 탐색
+    graph[curr].sort(key=lambda x: x[1])
 
     for weight, neighbor in graph[curr]:
         # 시작점 -> neighbor -> ... -> 도착점(b)의 거리가 최단 거리와 일치하는지 체크
@@ -68,7 +71,7 @@ while curr != b:
                 next_node = neighbor
             break;  # 번호가 가장 작은 조건을 만족했으므로 즉시 종료
 
-    # 만약 길을 찾지 못했다면 종료(무한루프 방지)
+    # 만약 길을 찾지 못했다면 종료
     if next_node == INT_MAX:
         break
     
