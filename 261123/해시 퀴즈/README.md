@@ -1,0 +1,8 @@
+# [[챌린지]해시 퀴즈](https://www.codetree.ai/trails/complete/curated-cards/challenge-hash-concept)
+
+| 항목 | 내용 |
+|---|---|
+| 분류 | Trail |
+| 커리큘럼 | [Trail 3 / 해싱 / 해싱](https://www.codetree.ai/trail-info/novice-high/) |
+| 난이도 | 쉬움 |
+| 경험치 | 10 XP |
